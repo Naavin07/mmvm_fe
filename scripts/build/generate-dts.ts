@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'fs-extra';
-import { $ } from 'zx';
+import { $, usePowerShell } from 'zx';
 
 if (process.platform === 'win32') {
   usePowerShell();
