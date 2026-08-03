@@ -2,6 +2,10 @@ import path from 'node:path';
 import fs from 'fs-extra';
 import { $ } from 'zx';
 
+if (process.platform === 'win32') {
+  usePowerShell();
+}
+
 export async function generateDts(packagePath: string) {
   await $({ cwd: packagePath })`npx tsc --project tsconfig.build.json`;
 
